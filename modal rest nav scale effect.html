@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Modal restaurant</title>
+        <style>
+            button
+            {
+                display: block;
+            }
+            #menu-container
+            {
+                border: 1px solid;
+                display: inline-block;
+                padding: 40px;
+                margin-left: 20%;
+                transform-origin: 50% 50%;
+                transition: transform 1s;
+            }
+            .scaleto0
+            {
+                transform: scale(0);
+            }
+            .scaleto1
+            {
+                transform: scale(1);
+            }
+        </style>
+    </head>
+    <body>
+        <button id="btn">Menu</button>
+        <div id="menu-container" class="scaleto0">
+            <button id="close-btn">X</button>
+            <div class="menu-title">
+                <h1>Starters</h1>
+                <ol>
+                    <li>Tomato Soup $2.50</li>
+                    <li>Chicken Salad $3.50</li>
+                    <li>Bread and Butter $1.00</li>
+                </ol>
+            </div>
+            <div class="menu-title">
+                <h1>Main Courses</h1>
+                <ol>
+                    <li>Tomato Soup $2.50</li>
+                    <li>Chicken Salad $3.50</li>
+                    <li>Bread and Butter $1.00</li>
+                </ol>
+            </div>
+            <div class="menu-title">
+                <h1>Desserts</h1>
+                <ol>
+                    <li>Tomato Soup $2.50</li>
+                    <li>Chicken Salad $3.50</li>
+                    <li>Bread and Butter $1.00</li>
+                </ol>
+            </div>
+        </div>
+
+        <script>
+            let menuBtn=document.getElementById("btn");
+            let menuContainer=document.getElementById("menu-container");
+            menuBtn.addEventListener("click",()=>
+            {
+                menuContainer.classList.remove("scaleto0");
+                menuContainer.classList.add("scaleto1");
+            });
+            let closeBtn=document.getElementById("close-btn");
+            closeBtn.addEventListener("click",()=>
+            {
+                menuContainer.classList.add("scaleto0");
+                menuContainer.classList.remove("scaleto1");
+            })
+        </script>
+    </body>
+</html>
